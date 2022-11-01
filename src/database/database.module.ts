@@ -1,6 +1,8 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { SnakeNamingStrategy } from "typeorm-naming-strategies";
+import { Cart } from './entities/cart.entity'
+//import { CartItem } from './entities/cartItem.entity'
 
 @Module({
     imports: [
@@ -12,14 +14,16 @@ import { SnakeNamingStrategy } from "typeorm-naming-strategies";
                 username: process.env.PG_LOGIN,
                 password: process.env.PG_PASS,
                 database: process.env.PG_DB_NAME,
-                entities: [],
+                entities: ['dist/database/entities/*.entity{.ts, .js}'],
                 logging: true,
-                namingStrategy: new SnakeNamingStrategy()
-
+                namingStrategy: new SnakeNamingStrategy(),
+                //migrationsRun: true,
+                // migrations: ['dist/src/migrations/*{.ts, .js}'],
+                
             }
         ),
-        TypeOrmModule.forFeature([])
+        TypeOrmModule.forFeature([Cart])
     ],
-    exports: [],
+    exports: [TypeOrmModule],
 })
 export class DatabaseModule {}
