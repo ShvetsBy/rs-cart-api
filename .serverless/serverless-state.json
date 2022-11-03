@@ -180,7 +180,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/cart-service/dev/1667309070456-2022-11-01T13:24:30.456Z/cart-service.zip"
+                "S3Key": "serverless/cart-service/dev/1667311666000-2022-11-01T14:07:46.000Z/cart-service.zip"
               },
               "Handler": "dist/main.handler",
               "Runtime": "nodejs14.x",
@@ -339,7 +339,7 @@
               "MainLambdaPermissionApiGateway"
             ]
           },
-          "ApiGatewayDeployment1667309038249": {
+          "ApiGatewayDeployment1667311646047": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -572,7 +572,7 @@
     "artifact": "/Users/ivanshvets/Documents/education/rs-cart-api/.serverless/cart-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/cart-service/dev/1667309070456-2022-11-01T13:24:30.456Z",
+    "artifactDirectoryName": "serverless/cart-service/dev/1667311666000-2022-11-01T14:07:46.000Z",
     "artifact": "cart-service.zip"
   }
 }
