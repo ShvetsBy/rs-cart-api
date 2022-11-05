@@ -1,10 +1,10 @@
-import {Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryColumn } from 'typeorm'
+import {Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from 'typeorm'
 import { Cart } from './cart.entity';
 
 @Entity()
 export class CartItem {
     @Column()
-    cart_id: string;
+    id: string;
 
     @Column()
     product_id: string;
@@ -12,8 +12,8 @@ export class CartItem {
     @Column()
     count: number;
 
-    @OneToMany(() => Cart, {nullable: false})
-    @JoinColumn({name: 'cart_id', referencedColumnName: 'id'})
+    @ManyToOne(() => Cart)
+    @JoinColumn({name: 'id'})
     cart: Cart;
 
 }
