@@ -1,22 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-// import from '../dto/create-card.dto'
-import { v4 } from 'uuid';
-import { Cart } from '../../../database/entities/cart.entity'
 
-//import { Cart } from '../models';
+import { v4 } from 'uuid';
+
+import { Cart } from '../models';
 
 @Injectable()
 export class CartService {
-
-  constructor (
-    @InjectRepository(Cart)
-    private readonly userCarts: Repository<Cart>
-  ) {}
-
-
-  //private userCarts: Record<string, Cart> = {};
+  private userCarts: Record<string, Cart> = {};
 
   findByUserId(userId: string): Cart {
     return this.userCarts[ userId ];
