@@ -1,4 +1,4 @@
-docker
+FROM node:14-alpine
 
 WORKDIR cart/app
 
@@ -12,6 +12,6 @@ RUN npm run build
 
 USER node
 
-expose 8080
+EXPOSE 4000
 
-CMD [ "npm", "run", "start:prod" ]
+ENTRYPOINT [ "npm", "run", "start:prod" ]

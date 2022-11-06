@@ -1,0 +1,8 @@
+node_modules
+dist
+test
+
+
+//no need to copy, node modules will appear after execution "npm i" command in docker file
+//no need to copy dist will appear after execution "npm run build" command in docker file
+// test we can eclude because in this case the are not part of delivery procces
