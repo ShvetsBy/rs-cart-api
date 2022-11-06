@@ -1,6 +1,6 @@
 FROM node:14-alpine
 WORKDIR cart/app
-COPY package*.json .
+COPY package*.json ./
 RUN npm i
 COPY . .
 RUN npm run build
